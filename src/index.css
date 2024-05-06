@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'scoutcond';
+  src: url('/fonts/scoutcond.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'ubisoftsans-regular';
+  src: url('/fonts/ubisoftsans-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url('/fonts/roboto.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'roboto-bold';
+  src: url('/fonts/roboto-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  font-family: 'ubisoftsans-regular', sans-serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255);
+  background-color: #24262a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  scrollbar-width: none;
+  overscroll-behavior: none;
+}
