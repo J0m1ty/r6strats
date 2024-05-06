@@ -1,20 +1,8 @@
 import { AspectRatio, Box, Center, Grid, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
+import { MapData, MapElement } from "../data/mapInfo";
 
-export type MapPools = 'STANDARD' | 'QUICK MATCH' | 'RANKED' | 'TEAM DEATHMATCH';
-
-export type MapData = {
-    image: string;
-    name: string;
-    pools: MapPools[];
-};
-
-export type MapElement = {
-    data: MapData;
-    shown: boolean;
-};
-
-function MapGrid({ maps }: { maps: MapElement[] }) {
-    const columns = useBreakpointValue({ base: 1, sm: 1, md: 2, lg: 3, xl: 4 });
+function MapGrid({ maps, onSelect }: { maps: MapElement[], onSelect: (map: MapData) => void }) {
+    const columns = useBreakpointValue({ base: 3, sm: 3, md: 3, lg: 3, xl: 4 });
 
     return (
         <Center mb={100}>
@@ -26,6 +14,7 @@ function MapGrid({ maps }: { maps: MapElement[] }) {
 
                     return (
                         <AspectRatio key={index} ratio={3 / 2}
+                            onClick={() => onSelect(map.data)}
                             _hover={{
                                 transition: 'transform 0.3s ease',
                                 transform: 'scale(1.1)',

@@ -1,181 +1,57 @@
-import { Box, Stack, Text, useBreakpointValue } from '@chakra-ui/react';
-import ButtonSelectGroup from './components/ButtonSelectGroup';
-import MapGrid, { MapData, MapElement, MapPools } from './components/MapGrid';
-import { useState } from 'react';
+import { Box, Stack, Text } from "@chakra-ui/react";
+import MapSelect from "./MapSelect";
+import { useState } from "react";
+import { MapData } from "./data/mapInfo";
+import OperatorSelect from "./OperatorSelect";
+import { OperatorData } from "./data/operatorInfo";
 
-const mapList: MapData[] = [
-	{
-		image: '/maps/Bank.avif',
-		name: 'Bank',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Border.avif',
-		name: 'Border',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Chalet.avif',
-		name: 'Chalet',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/CloseQuarter.avif',
-		name: 'Close Quarter',
-        pools: []
-	},
-	{
-		image: '/maps/Clubhouse.avif',
-		name: 'Clubhouse',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Coastline.avif',
-		name: 'Coastline',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Consulate.avif',
-		name: 'Consulate',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/EmeraldPlains.avif',
-		name: 'Emerald Plains',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Favela.avif',
-		name: 'Favela',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Fortress.avif',
-		name: 'Fortress',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Hereford.avif',
-		name: 'Hereford Base',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/House.avif',
-		name: 'House',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Kafe.avif',
-		name: 'Kafe Dostoyevsky',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Kanal.avif',
-		name: 'Kanal',
-        pools: ['QUICK MATCH', 'STANDARD', 'RANKED']
-	},
-	{
-		image: '/maps/Lair.avif',
-		name: 'Lair',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/NighthavenLabs.avif',
-		name: 'Nighthaven Labs',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Oregon.avif',
-		name: 'Oregon',
-        pools: ['STANDARD', 'RANKED']
-	},
-	{
-		image: '/maps/Outback.avif',
-		name: 'Outback',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Plane.avif',
-		name: 'Presidential Plane',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Skyscraper.avif',
-		name: 'Skyscraper',
-        pools: ['STANDARD', 'RANKED']
-	},
-	{
-		image: '/maps/Stadium.avif',
-		name: 'Stadium',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Themepark.avif',
-		name: 'Themepark',
-        pools: ['STANDARD', 'RANKED']
-	},
-	{
-		image: '/maps/Tower.avif',
-		name: 'Tower',
-        pools: ['QUICK MATCH']
-	},
-	{
-		image: '/maps/Villa.avif',
-		name: 'Villa',
-        pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
-	},
-	{
-		image: '/maps/Yacht.avif',
-		name: 'Yacht',
-        pools: ['QUICK MATCH']
-	},
-];
+enum Step {
+	MapSelect,
+	OperatorSelect,
+	StrategySelect
+}
 
 function App() {
-	const [ maps, setMaps ] = useState<MapElement[]>(mapList.map((map) => {
-		return {
-			data: map,
-			shown: true
-		};
-	}));
+	const [ step, setStep ] = useState<Step>(Step.MapSelect);
 
-	const displayValue = useBreakpointValue({ base: false, md: true });
+	const onMapSelect = (map: MapData) => {
+		console.log(map);
+		setStep(Step.OperatorSelect);
+	};
 
-	const onFilterSelect = (option: MapPools | null) => {
-        setMaps(maps.map((map) => {
-            if (!option) {
-                map.shown = true;
-                return map;
-            }
-            
-            map.shown = map.data.pools.includes(option);
-            return map;
-        }));
+	const onOperatorSelect = (operator: OperatorData) => {
+		console.log(operator);
+		setStep(Step.StrategySelect);
 	};
 
 	return (
 		<Box
-			bgImage={"url('/background.jpg')"}
+			bgImage={"url('/images/background.jpg')"}
 			bgPos={'center'}
 			bgRepeat={'no-repeat'}
 			bgSize={'cover'}
 			minH={'100vh'}
             backgroundAttachment={'fixed'}
 		>
-			<Stack direction={'column'} spacing={'50px'}>
+			<Box
+				position={'absolute'}
+				right={0}
+				bottom={0}
+				bgImage={"url('/images/background-overlay.png')"}
+				w={'100%'}
+				h={'100%'}
+				bgPos={'100% 100%'}
+				bgRepeat={'no-repeat'}
+				backgroundAttachment={'fixed'}
+			>
+			<Stack direction={'column'} spacing={25}>
 				<Text fontSize={'80px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} mt={50} color={'#fff'} textAlign={'center'}>
-					SELECT A MAP
+					{step === Step.MapSelect ? 'SELECT A MAP' : 'SELECT AN OPERATOR'}
 				</Text>
-				<Stack direction={'column'} spacing={0}>
-					<Text fontSize={'50px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} color={'#fff'} textAlign={'center'}>
-						{displayValue ? 'OPERATION DEADLY OMEN - ' : ''}PLAYLIST FILTERS
-					</Text>
-					<Box paddingX={10}>
-						<ButtonSelectGroup onSelect={onFilterSelect} options={['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']} />
-					</Box>
-				</Stack>
-				<MapGrid maps={maps} />
+					{step === Step.MapSelect && <MapSelect onSelect={onMapSelect}/>}
+					{step === Step.OperatorSelect && <OperatorSelect onSelect={onOperatorSelect}/>}
 			</Stack>
+			</Box>
 		</Box>
 	)
 }

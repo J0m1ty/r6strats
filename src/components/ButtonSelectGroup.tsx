@@ -1,9 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import Button from "./Button";
-import { MapPools } from "./MapGrid";
 
-function ButtonSelectGroup({ onSelect, options }: { onSelect: (option: MapPools | null) => void, options: MapPools[] }) {
+function ButtonSelectGroup<T extends string>({ onSelect, options }: { onSelect: (option: T | null) => void, options: T[] }) {
     const [selectedButton, setSelectedButton] = useState("");
 
     const handleButtonClick = (index: number) => {
