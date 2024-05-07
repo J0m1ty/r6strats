@@ -14,127 +14,127 @@ export type MapElement = {
 export const mapList: MapData[] = [
 	{
 		image: '/maps/Bank.avif',
-		name: 'Bank',
+		name: 'bank',
 		pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/Border.avif',
-		name: 'Border',
+		name: 'border',
 		pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/Chalet.avif',
-		name: 'Chalet',
+		name: 'chalet',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/CloseQuarter.avif',
-		name: 'Close Quarter',
+		name: 'close-quarter',
         pools: ['TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Clubhouse.avif',
-		name: 'Clubhouse',
+		name: 'clubhouse',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/Coastline.avif',
-		name: 'Coastline',
+		name: 'coastline',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Consulate.avif',
-		name: 'Consulate',
+		name: 'consulate',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/EmeraldPlains.avif',
-		name: 'Emerald Plains',
+		name: 'emerald-plains',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Favela.avif',
-		name: 'Favela',
+		name: 'favela',
         pools: ['QUICK MATCH', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Fortress.avif',
-		name: 'Fortress',
+		name: 'fortress',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/Hereford.avif',
-		name: 'Hereford Base',
+		name: 'hereford-base',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/House.avif',
-		name: 'House',
+		name: 'house',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/Kafe.avif',
-		name: 'Kafe Dostoyevsky',
+		name: 'kafe-dostoyevsky',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/Kanal.avif',
-		name: 'Kanal',
+		name: 'kanal',
         pools: ['QUICK MATCH', 'STANDARD', 'RANKED']
 	},
 	{
 		image: '/maps/Lair.avif',
-		name: 'Lair',
+		name: 'lair',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/NighthavenLabs.avif',
-		name: 'Nighthaven Labs',
+		name: 'nighthaven-labs',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Oregon.avif',
-		name: 'Oregon',
+		name: 'oregon',
         pools: ['STANDARD', 'RANKED']
 	},
 	{
 		image: '/maps/Outback.avif',
-		name: 'Outback',
+		name: 'outback',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED']
 	},
 	{
 		image: '/maps/Plane.avif',
-		name: 'Presidential Plane',
+		name: 'presidential-plane',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/Skyscraper.avif',
-		name: 'Skyscraper',
+		name: 'skyscraper',
         pools: ['STANDARD', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Stadium.avif',
-		name: 'Stadium',
+		name: 'stadium',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/Themepark.avif',
-		name: 'Themepark',
+		name: 'themepark',
         pools: ['STANDARD', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Tower.avif',
-		name: 'Tower',
+		name: 'tower',
         pools: ['QUICK MATCH']
 	},
 	{
 		image: '/maps/Villa.avif',
-		name: 'Villa',
+		name: 'villa',
         pools: ['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']
 	},
 	{
 		image: '/maps/Yacht.avif',
-		name: 'Yacht',
+		name: 'yacht',
         pools: ['QUICK MATCH']
 	},
 ];

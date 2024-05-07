@@ -68,7 +68,7 @@ body {
 
 .background {
   padding: 60px 0 0;
-  background: url(https://static-dm.ubisoft.com/siege/prod/137c21c091b5eff1c68bd371d3787eac.png) 100% 0 no-repeat,url(https://static-dm.ubisoft.com/siege/prod/89b7452155631f5f1006d785a4cbd5bd.png) 0 0 no-repeat,url(https://static-dm.ubisoft.com/siege/prod/74171266860b28df44aaa9a3f9370629.png) 100% 100% no-repeat,url(https://static-dm.ubisoft.com/siege/prod/73ef5d6226f8eed16a1726c02c91619b.png) 0 100% no-repeat;
+  background: url("../public/images/purple_glow.png") 100% 0 no-repeat,url("../public/images/accent_dashes_top.png") 0 0 no-repeat,url("../public/images/accent_dashes_bottom.png") 100% 100% no-repeat,url("../public/images/blue_glow.png") 0 100% no-repeat;
   background-size: 50vw !important;
   background-size: 100%;
   height: 100%;

@@ -13,7 +13,7 @@ function MapGrid({ maps, onSelect }: { maps: MapElement[], onSelect: (map: MapDa
                     }
 
                     return (
-                        <AspectRatio key={index} ratio={3 / 2}
+                        <AspectRatio key={index} ratio={3 / 2 } cursor={'pointer'}
                             onClick={() => onSelect(map.data)}
                             _hover={{
                                 transition: 'transform 0.3s ease',
@@ -44,7 +44,7 @@ function MapGrid({ maps, onSelect }: { maps: MapElement[], onSelect: (map: MapDa
                                     h={'37px'}
                                 >
                                     <Text fontSize={'26px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'20px'} mt={2} textAlign={'center'}>
-                                        {map.data.name}
+                                        {map.data.name.replace("-", " ")}
                                     </Text>
                                 </Box>
                                 <Box

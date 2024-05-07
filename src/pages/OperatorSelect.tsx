@@ -1,7 +1,7 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { OperatorData, OperatorSpecialty, OperatorType } from "./data/operatorInfo";
-import ButtonSelectGroup from "./components/ButtonSelectGroup";
-import BigButton from "./components/BigButton";
+import { OperatorData, OperatorSpecialty, OperatorType } from "../data/operatorInfo";
+import ButtonSelectGroup from "../components/ButtonSelectGroup";
+import BigButton from "../components/BigButton";
 
 function OperatorSelect({ onSelect }: { onSelect: (map: OperatorData) => void}) {
     const onTypeSelect = (option: OperatorType | null) => {

@@ -1,8 +1,8 @@
 import { Box, Stack, Text } from "@chakra-ui/react";
-import MapSelect from "./MapSelect";
+import MapSelect from "./pages/MapSelect";
 import { useState } from "react";
 import { MapData } from "./data/mapInfo";
-import OperatorSelect from "./OperatorSelect";
+import OperatorSelect from "./pages/OperatorSelect";
 import { OperatorData } from "./data/operatorInfo";
 
 enum Step {
