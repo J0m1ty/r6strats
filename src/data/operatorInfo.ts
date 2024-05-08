@@ -10,6 +10,9 @@ export type OperatorData = {
 };
 
 export const operatorList: OperatorData[] = [
+
+    //Attackers
+
     {
         name: 'deimos',
         image: '/operators/badges/Deimos.png',
@@ -204,6 +207,7 @@ export const operatorList: OperatorData[] = [
     },
 
 
+    // Defenders
 
 
     {
