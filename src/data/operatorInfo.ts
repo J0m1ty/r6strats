@@ -351,12 +351,6 @@ export const operatorList: OperatorData[] = [
         specialties: ['ANTI-ENTRY', "TRAPPER"]
     },
     {
-        name: 'valkyrie',
-        image: '/operators/badges/Valkyrie.png',
-        type: 'defender',
-        specialties: ['INTEL', "SUPPORT"]
-    },
-    {
         name: 'mute',
         image: '/operators/badges/Mute.png',
         type: 'defender',
