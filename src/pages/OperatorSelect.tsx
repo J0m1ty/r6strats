@@ -2,8 +2,9 @@ import { Stack, Text } from "@chakra-ui/react";
 import { OperatorData, OperatorSpecialty, OperatorType } from "../data/operatorInfo";
 import ButtonSelectGroup from "../components/ButtonSelectGroup";
 import BigButton from "../components/BigButton";
+import { MapData } from "../data/mapInfo";
 
-function OperatorSelect({ onSelect }: { onSelect: (map: OperatorData) => void}) {
+function OperatorSelect({ mapData }: { mapData: MapData }) {
     const onTypeSelect = (option: OperatorType | null) => {
         console.log(option);
     };
@@ -11,6 +12,8 @@ function OperatorSelect({ onSelect }: { onSelect: (map: OperatorData) => void}) 
     const onSpecialtySelect = (option: OperatorSpecialty | null) => {
         console.log(option);
     };
+
+    console.log(mapData)
 
     return (
         <Stack direction={'column'}>

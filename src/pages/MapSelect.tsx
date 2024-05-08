@@ -4,7 +4,11 @@ import MapGrid from '../components/MapGrid';
 import { useState } from 'react';
 import { MapData, MapElement, MapPool, mapList } from '../data/mapInfo';
 
-function MapSelect({ onSelect }: { onSelect: (map: MapData) => void }) {
+function mapSelected(map: MapData){
+    window.location.href = "/" + map.name
+}
+
+function MapSelect() {
     const [ maps, setMaps ] = useState<MapElement[]>(mapList.map((map) => {
 		return {
 			data: map,
@@ -27,14 +31,17 @@ function MapSelect({ onSelect }: { onSelect: (map: MapData) => void }) {
 	};
 
     return (
-        <Stack direction={'column'} spacing={'50px'}>
-            <Stack direction={'column'} spacing={0}>
-                <Text fontSize={'50px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} color={'#fff'} textAlign={'center'}>
-                    {displayValue ? 'OPERATION DEADLY OMEN - ' : ''}PLAYLIST FILTERS
-                </Text>
-                <ButtonSelectGroup<MapPool> onSelect={onFilterSelect} options={['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']} />
+        <Stack direction={'column'} spacing={25}>
+            <Text fontSize={'80px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} mt={50} color={'#fff'} textAlign={'center'}>SELECT A MAP</Text>
+            <Stack direction={'column'} spacing={'50px'}>
+                <Stack direction={'column'} spacing={0}>
+                    <Text fontSize={'50px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} color={'#fff'} textAlign={'center'}>
+                        {displayValue ? 'OPERATION DEADLY OMEN - ' : ''}PLAYLIST FILTERS
+                    </Text>
+                    <ButtonSelectGroup<MapPool> onSelect={onFilterSelect} options={['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']} />
+                </Stack>
+                <MapGrid maps={maps} onSelect={mapSelected}/>
             </Stack>
-            <MapGrid maps={maps} onSelect={onSelect} />
         </Stack>
     );
 }
