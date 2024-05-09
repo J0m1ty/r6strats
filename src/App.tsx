@@ -16,19 +16,17 @@ enum Step {
 function App() {
 
 	return (
-		<div className="background">
-			<BrowserRouter>
-				<Routes>
-					<Route index element={<MapSelect />}></Route>
-					{mapList.map((map, index) =>{
-						
-						return(
-							<Route key={index} path={map.name} element={<OperatorSelect mapData={map}/>}></Route>
-						)
-					})}
-				</Routes>
-			</BrowserRouter>
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route index element={<MapSelect />}></Route>
+				{mapList.map((map, index) =>{
+					
+					return(
+						<Route key={index} path={map.name} element={<OperatorSelect mapData={map}/>}></Route>
+					)
+				})}
+			</Routes>
+		</BrowserRouter>
 	)
 }
 

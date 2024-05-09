@@ -9,6 +9,11 @@ export type OperatorData = {
     specialties: OperatorSpecialty[];
 };
 
+export type OperatorElement = {
+    data: OperatorData;
+    shown: boolean;
+};
+
 export const operatorList: OperatorData[] = [
 
     //Attackers
