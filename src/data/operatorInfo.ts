@@ -4,11 +4,14 @@ export type OperatorType = "attacker" | "defender";
 
 export type OperatorSpecialty = "INTEL" | "MAP CONTROL" | "ANTI-ENTRY" | "ANTI-GADGET" | "BREACH" | "TRAPPER" | "CROWD CONTROL" | "SUPPORT" | "FRONT LINE";
 
+export type Gadget = "frag-grenade" | "hard-breach-charge" | "smoke-grenade" | "stun-grenade" | "claymore" | "impact-emp" | "breach-charge"
+
 export type OperatorData = {
     name: string;
     image: string;
     type: OperatorType;
     specialties: OperatorSpecialty[];
+    gadgets: Gadget[];
 };
 
 export type OperatorElement = {
@@ -24,73 +27,85 @@ export const operatorList: OperatorData[] = [
         name: "deimos",
         image: "/operators/badges/Deimos.png",
         type: "attacker",
-        specialties: ["INTEL", "MAP CONTROL"]
+        specialties: ["INTEL", "MAP CONTROL"],
+        gadgets: ["frag-grenade", "hard-breach-charge"]
     },
     {
         name: "ram",
         image: "/operators/badges/Ram.png",
         type: "attacker",
-        specialties: ["BREACH"]
+        specialties: ["BREACH"],
+        gadgets: ["smoke-grenade", "stun-grenade"]
     },
     {
         name: "brava",
         image: "/operators/badges/Brava.png",
         type: "attacker",
-        specialties: ["INTEL", "ANTI-GADGET"]
+        specialties: ["INTEL", "ANTI-GADGET"],
+        gadgets: ["smoke-grenade", "claymore"]
     },
     {
         name: "grim",
         image: "/operators/badges/Grim.png",
         type: "attacker",
-        specialties: ["FRONT LINE", "MAP CONTROL"]
+        specialties: ["FRONT LINE", "MAP CONTROL"],
+        gadgets: ["impact-emp", "claymore", "hard-breach-charge"]
     },
     {
         name: "sens",
         image: "/operators/badges/Sens.png",
         type: "attacker",
-        specialties: ["SUPPORT", "MAP CONTROL"]
+        specialties: ["SUPPORT", "MAP CONTROL"],
+        gadgets: ["hard-breach-charge", "claymore", "frag-grenade"]
     },
     {
         name: "osa",
         image: "/operators/badges/Osa.png",
         type: "attacker",
-        specialties: ["INTEL", "SUPPORT"]
+        specialties: ["INTEL", "SUPPORT"],
+        gadgets: ["frag-grenade", "claymore", "impact-emp"]
     },
     {
         name: "flores",
         image: "/operators/badges/Flores.png",
         type: "attacker",
-        specialties: ["ANTI-GADGET","INTEL"]
+        specialties: ["ANTI-GADGET","INTEL"],
+        gadgets: ["claymore", "stun-grenade"]
     },
     {
         name: "zero",
         image: "/operators/badges/Zero.png",
         type: "attacker",
-        specialties: ["ANTI-GADGET","INTEL"]
+        specialties: ["ANTI-GADGET","INTEL"],
+        gadgets: ["claymore", "hard-breach-charge"]
     },
     {
         name: "ace",
         image: "/operators/badges/Ace.png",
         type: "attacker",
-        specialties: ["BREACH","ANTI-GADGET"]
+        specialties: ["BREACH","ANTI-GADGET"],
+        gadgets: ["breach-charge", "claymore"]
     },
     {
         name: "iana",
         image: "/operators/badges/Iana.png",
         type: "attacker",
-        specialties: ["FRONT LINE" , "INTEL"]
+        specialties: ["FRONT LINE" , "INTEL"],
+        gadgets: ["impact-emp", "smoke-grenade"]
     },
     {
         name: "kali",
         image: "/operators/badges/Kali.png",
         type: "attacker",
-        specialties: ["ANTI-GADGET" , "SUPPORT"]
+        specialties: ["ANTI-GADGET" , "SUPPORT"],
+        gadgets: ["breach-charge", "claymore"]
     },
     {
         name: "amaru",
         image: "/operators/badges/Amaru.png",
         type: "attacker",
-        specialties: ["FRONT LINE" , "MAP CONTROL"]
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: []
     },
     {
         name: "nokk",
