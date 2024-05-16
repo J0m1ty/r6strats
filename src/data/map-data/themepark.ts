@@ -1,0 +1,1 @@
+//This is where each room, site, and spawn in the map is defined, with reference to image
