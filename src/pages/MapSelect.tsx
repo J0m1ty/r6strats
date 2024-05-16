@@ -30,6 +30,8 @@ function MapSelect() {
         }));
 	};
 
+    const [ mapPool, setMapPool ] = useState<MapPool[]>(['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH'])
+
     return (
         <Stack direction={'column'} spacing={25}>
             <Text fontSize={'80px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} mt={50} color={'#fff'} textAlign={'center'}>SELECT A MAP</Text>
@@ -38,7 +40,7 @@ function MapSelect() {
                     <Text fontSize={'50px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'67px'} color={'#fff'} textAlign={'center'}>
                         {displayValue ? 'OPERATION DEADLY OMEN - ' : ''}PLAYLIST FILTERS
                     </Text>
-                    <ButtonSelectGroup<MapPool> onSelect={onFilterSelect} options={['STANDARD', 'QUICK MATCH', 'RANKED', 'TEAM DEATHMATCH']} />
+                    <ButtonSelectGroup<MapPool> onSelect={onFilterSelect} options={mapPool} />
                 </Stack>
                 <MapGrid maps={maps} onSelect={mapSelected}/>
             </Stack>

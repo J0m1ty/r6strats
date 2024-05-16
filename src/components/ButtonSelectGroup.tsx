@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 
 function ButtonSelectGroup<T extends string>({ onSelect, options }: { onSelect: (option: T | null) => void, options: T[] }) {
@@ -17,6 +17,11 @@ function ButtonSelectGroup<T extends string>({ onSelect, options }: { onSelect: 
         setSelectedButton(option);
         onSelect(option);
     };
+
+    useEffect(() => {
+        setSelectedButton("");
+        onSelect(null);
+    }, [options])
 
     return (
         <Flex wrap={'wrap'} justifyContent={'center'}>

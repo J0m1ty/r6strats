@@ -40,10 +40,10 @@ function OperatorGrid({ operators, onSelect }: { operators: OperatorElement[], o
                                         className={'operator-name-container'}
                                         bgColor={'#c3c3c3'}
                                         color={'#000'}
-                                        w={'100%'}
+                                        w={'1000%'}
                                         h={'37px'}
                                     >
-                                        <Text fontSize={'26px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'20px'} mt={2} textAlign={'center'}>
+                                        <Text fontSize={'23px'} fontFamily={'scoutcond'} textTransform={'uppercase'} lineHeight={'20px'} mt={2} textAlign={'center'}>
                                             {operator.data.name.replace("-", " ")}
                                         </Text>
                                     </Box>

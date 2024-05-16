@@ -12,6 +12,8 @@ function OperatorSelect({ mapData }: { mapData: MapData }) {
 
     const [selectedOperatorType, setSelectedOperatorType] = useState<OperatorType>("attacker");
 
+    const [ filterOptions, setFilterOptions ] = useState<OperatorSpecialty[]>(['INTEL', 'MAP CONTROL', 'ANTI-GADGET', 'BREACH', 'SUPPORT', 'FRONT LINE'])
+
     const [ operators, setOperators ] = useState<OperatorElement[]>(operatorList.map((operator) => {
 		return {
 			data: operator,
@@ -24,7 +26,6 @@ function OperatorSelect({ mapData }: { mapData: MapData }) {
     }, [selectedOperatorType])
 
     const updateFilters = () => {
-        console.log(specialityFilter)
         setOperators(operators.map((operator) => {
             let passesSpeciality = false
             if (!specialityFilter){
@@ -42,6 +43,7 @@ function OperatorSelect({ mapData }: { mapData: MapData }) {
 
     const onTypeSelect = (option: OperatorType) => {
         setSelectedOperatorType(option)
+        setFilterOptions(option == "attacker" ? ['INTEL', 'MAP CONTROL', 'ANTI-GADGET', 'BREACH', 'SUPPORT', 'FRONT LINE'] : ['INTEL', 'ANTI-ENTRY', 'ANTI-GADGET', 'TRAPPER', 'CROWD CONTROL', 'SUPPORT'])
         specialityFilter = null
         updateFilters()
     };
@@ -67,11 +69,8 @@ function OperatorSelect({ mapData }: { mapData: MapData }) {
                     <Text fontSize={'24px'} fontFamily={'scoutcond'} textTransform={'uppercase'} color={'#fff'} textAlign={'center'}>
                         ADDITIONAL SPECIALITY FILTERS
                     </Text>
-                    {selectedOperatorType == "attacker" ?
-                    <ButtonSelectGroup<OperatorSpecialty> onSelect={onSpecialtySelect} options={['INTEL', 'MAP CONTROL', 'ANTI-GADGET', 'BREACH', 'SUPPORT', 'FRONT LINE']} />
-                    :
-                    <ButtonSelectGroup<OperatorSpecialty> onSelect={onSpecialtySelect} options={['INTEL', 'ANTI-ENTRY', 'ANTI-GADGET', 'TRAPPER', 'CROWD CONTROL', 'SUPPORT']} />
-                    }
+
+                    <ButtonSelectGroup<OperatorSpecialty> onSelect={onSpecialtySelect} options={filterOptions} />
                     
                     <OperatorGrid operators={operators} onSelect={operatorSelected}></OperatorGrid>
                 </Stack>

@@ -2,7 +2,7 @@ import { AspectRatio, Box, Center, Grid, Stack, Text, useBreakpointValue } from 
 import { MapData, MapElement } from "../data/mapInfo";
 
 function MapGrid({ maps, onSelect }: { maps: MapElement[], onSelect: (map: MapData) => void }) {
-    const columns = useBreakpointValue({ base: 3, sm: 3, md: 3, lg: 3, xl: 4 });
+    const columns = useBreakpointValue({ base: 3, sm: 2, md: 3, lg: 3, xl: 4 });
 
     return (
         <Center mb={100}>
