@@ -1,3 +1,5 @@
+import { map } from "./mapInfo";
+
 export type OperatorType = 'attacker' | 'defender';
 
 export type OperatorSpecialty = 'INTEL' | 'MAP CONTROL' | 'ANTI-ENTRY' | 'ANTI-GADGET' | 'BREACH' | 'TRAPPER' | 'CROWD CONTROL' | 'SUPPORT' | 'FRONT LINE';
@@ -8,6 +10,13 @@ export type OperatorData = {
     type: OperatorType;
     specialties: OperatorSpecialty[];
 };
+
+export type OperatorStrategy = {
+    map: map;
+    operators?: string[];
+    secondarySpecific?: string;
+    content: HTMLElement;
+}
 
 export type OperatorElement = {
     data: OperatorData;

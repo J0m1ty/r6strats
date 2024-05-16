@@ -2,7 +2,7 @@ export type MapPool = 'STANDARD' | 'QUICK MATCH' | 'RANKED' | 'TEAM DEATHMATCH';
 
 export type MapData = {
     image: string;
-    name: string;
+    name: map;
     pools: MapPool[];
 };
 
@@ -10,6 +10,8 @@ export type MapElement = {
     data: MapData;
     shown: boolean;
 };
+
+export type map = 'yacht' | 'villa' | 'tower' | 'themepark' | 'stadium' | 'skyscraper' | 'presidential-plane' | "outback" | 'oregon' | 'nighthaven-labs' | 'lair' | 'kanal' | "bank" | "border" | "chalet" | "close-quarter" | "clubhouse" | "coastline" | "consulate" | "emerald-plains" | "favela" | "fortress" | "hereford-base" | "house" | 'kafe-dostoyevsky'
 
 export const mapList: MapData[] = [
 	{
