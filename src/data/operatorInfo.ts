@@ -15,7 +15,7 @@ export type OperatorElement = {
 
 export type OperatorPosition = "attacker" | "defender";
 
-export const operatorNames = ["striker", "sentry", "sledge", "thatcher", "ash", "thermite", "twitch", "montagne", "glaz", "fuze", "blitz", "iq", "Buck", "blackbeard", "capitao", "hibana", "jackal", "ying", "zofia", "dokkaebi", "lion", "finka", "maverick", "nomad", "gridlock", "nokk", "amaru", "kali", "iana", "ace", "zero", "flores", "osa", "sens", "grim", "brava", "ram", "deimos", "smoke", "mute", "castle", "pulse", "doc", "rook", "kapkan", "tachanka", "jager", "bandit", "frost", "valkyrie", "caveira", "echo", "mira", "lesion", "ela", "vigil", "alibi", "maestro", "clash", "kaid", "mozzie", "warden", "goyo", "wamai", "oryx", "melusi", "aruni", "thunderbird", "thorn", "azami", "solis", "fenrir", "tubarao"] as const;
+export const operatorNames = ["striker", "sentry", "sledge", "thatcher", "ash", "thermite", "twitch", "montagne", "glaz", "fuze", "blitz", "iq", "buck", "blackbeard", "capitao", "hibana", "jackal", "ying", "zofia", "dokkaebi", "lion", "finka", "maverick", "nomad", "gridlock", "nokk", "amaru", "kali", "iana", "ace", "zero", "flores", "osa", "sens", "grim", "brava", "ram", "deimos", "smoke", "mute", "castle", "pulse", "doc", "rook", "kapkan", "tachanka", "jager", "bandit", "frost", "valkyrie", "caveira", "echo", "mira", "lesion", "ela", "vigil", "alibi", "maestro", "clash", "kaid", "mozzie", "warden", "goyo", "wamai", "oryx", "melusi", "aruni", "thunderbird", "thorn", "azami", "solis", "fenrir", "tubarao"] as const;
 export type OperatorName = typeof operatorNames[number];
 
 export const attackerSpecialties = ["INTEL", "MAP CONTROL", "ANTI-GADGET", "BREACH", "SUPPORT", "FRONT LINE"] as const;
@@ -200,92 +200,222 @@ const attackers: OperatorData<OperatorType>[] = [
     {
         name: "nomad",
         type: "attacker",
-        specialties: ["FRONT LINE" , "MAP CONTROL"]
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: ["Breach Charge", "Stun Grenade"],
+        primary: getWeapon(["AK-74M", "ARX200"]),
+        secondary: getWeapon(["PRB92", ".44 MAG SEMI-AUTO"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "maverick",
         type: "attacker",
-        specialties: ["BREACH" , "FRONT LINE"]
+        specialties: ["BREACH" , "FRONT LINE"],
+        gadgets: ["Claymore", "Stun Grenade"],
+        primary: getWeapon(["AR-15.50", "M4"]),
+        secondary: getWeapon(["1911 TACOPS"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "lion",
         type: "attacker",
-        specialties: ["INTEL" , "MAP CONTROL"]
+        specialties: ["INTEL" , "MAP CONTROL"],
+        gadgets: ["Stun Grenade", "Claymore"],
+        primary: getWeapon(["V308", "417", "SG-CQB"]),
+        secondary: getWeapon(["GONNE-6", "LFP586", "P9"]),
+        speed: 2,
+        health: 2
+    },
+    {
+        name: "finka",
+        type: "attacker",
+        specialties: ["FRONT LINE", "SUPPORT"],
+        gadgets: ["Hard Breach Charge", "Stun Grenade", "Smoke Grenade", "Frag Grenade"],
+        primary: getWeapon(["SPEAR .308", "6P41", "SASG-12"]),
+        secondary: getWeapon(["PMM", "GSH-18"]),
+        speed: 2,
+        health: 2
+    },
+    {
+        name: "dokkaebi",
+        type: "attacker",
+        specialties: ["INTEL", "MAP CONTROL"],
+        gadgets: ["Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
+        primary: getWeapon(["MK 14 EBR", "BOSG.12.2"]),
+        secondary: getWeapon(["GONNE-6", "SMG-12", "C75 AUTO"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "zofia",
         type: "attacker",
-        specialties: ["BREACH" , "ANTI-GADGET"]
+        specialties: ["BREACH" , "ANTI-GADGET"],
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["LMG-E", "M762"]),
+        secondary: getWeapon(["RG15"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "ying",
         type: "attacker",
-        specialties: ["FRONT LINE" , "MAP CONTROL"]
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: ["Hard Breach Charge", "Smoke Grenade"],
+        primary: getWeapon(["T-95 LSW", "SIX12"]),
+        secondary: getWeapon(["Q-929"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "jackal",
         type: "attacker",
-        specialties: ["INTEL" , "MAP CONTROL"]
+        specialties: ["INTEL" , "MAP CONTROL"],
+        gadgets: ["Claymore", "Smoke Grenade"],
+        primary: getWeapon(["C7E", "PDW9", "ITA12L"]),
+        secondary: getWeapon(["USP40", "ITA12S"]),
+        speed: 2,
+        health: 2
+    },
+    {
+        name: "hibana",
+        type: "attacker",
+        specialties: ["BREACH", "FRONT LINE"],
+        gadgets: ["Stun Grenade", "Breach Charge"],
+        primary: getWeapon(["TYPE-89", "SUPERNOVA"]),
+        secondary: getWeapon(["P229", "BEARING 9"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "capitao",
         type: "attacker",
-        specialties: ["FRONT LINE" , "MAP CONTROL"]
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: ["Claymore", "Hard Breach Charge", "Impact EMP Grenade"],
+        primary: getWeapon(["PARA-308", "M249"]),
+        secondary: getWeapon(["PRB92", "GONNE-6"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "blackbeard",
         type: "attacker",
-        specialties: ["SUPPORT"]
+        specialties: ["SUPPORT"],
+        gadgets: ["Stun Grenade", "Claymore"],
+        primary: getWeapon(["MK17 CQB", "SR-25"]),
+        secondary: getWeapon(["D-50"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "buck",
         type: "attacker",
-        specialties: ["BREACH" , "SUPPORT"]
+        specialties: ["BREACH" , "SUPPORT"],
+        gadgets: ["Hard Breach Charge", "Stun Grenade"],
+        primary: getWeapon(["C8-SFW", "CAMRS"]),
+        secondary: getWeapon(["MK1 9MM", "GONNE-6"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "sledge",
         type: "attacker",
-        specialties: ["BREACH" , "ANTI-GADGET"]
+        specialties: ["BREACH" , "ANTI-GADGET"],
+        gadgets: ["Frag Grenade", "Stun Grenade", "Impact EMP Grenade"],
+        primary: getWeapon(["L85A2", "M590A1"]),
+        secondary: getWeapon(["P226 MK 25"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "thatcher",
         type: "attacker",
-        specialties: ["ANTI-GADGET" , "SUPPORT"]
+        specialties: ["ANTI-GADGET" , "SUPPORT"],
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["AR33", "L85A2", "M590A1"]),
+        secondary: getWeapon(["P226 MK 25"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "ash",
         type: "attacker",
-        specialties: ["BREACH" , "FRONT LINE"]
+        specialties: ["BREACH" , "FRONT LINE"],
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["G36C", "R4-C"]),
+        secondary: getWeapon(["5.7 USG", "M45 MEUSOC"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "thermite",
         type: "attacker",
-        specialties: ["BREACH" , "SUPPORT"]
+        specialties: ["BREACH" , "SUPPORT"],
+        gadgets: ["Smoke Grenade", "Stun Grenade"],
+        primary: getWeapon(["M1014", "556XI"]),
+        secondary: getWeapon(["5.7 USG", "M45 MEUSOC"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "montagne",
         type: "attacker",
-        specialties: ["INTEL" , "SUPPORT"]
+        specialties: ["INTEL" , "SUPPORT"],
+        gadgets: ["Hard Breach Charge", "Smoke Grenade", "Stun Grenade"],
+        primary: getWeapon(["LE ROC SHIELD"]),
+        secondary: getWeapon(["P9", "LFP586"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "twitch",
         type: "attacker",
-        specialties: ["ANTI-GADGET" , "INTEL"]
+        specialties: ["ANTI-GADGET" , "INTEL"],
+        gadgets: ["Smoke Grenade", "Claymore"],
+        primary: getWeapon(["F2", "417", "SG-CQB"]),
+        secondary: getWeapon(["P9", "LFP586"]),
+        speed: 2,
+        health: 2
+    },
+    {
+        name: "blitz",
+        type: "attacker",
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: ["Smoke Grenade", "Breach Charge"],
+        primary: getWeapon(["G52-TACTICAL SHIELD"]),
+        secondary: getWeapon(["P12"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "iq",
         type: "attacker",
-        specialties: ["INTEL" , "SUPPORT"]
+        specialties: ["INTEL" , "SUPPORT"],
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["AUG A2", "552 COMMANDO", "G8A1"]),
+        secondary: getWeapon(["P12"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "fuze",
         type: "attacker",
-        specialties: ["ANTI-GADGET"]
+        specialties: ["ANTI-GADGET"],
+        gadgets: ["Breach Charge", "Hard Breach Charge", "Smoke Grenade"],
+        primary: getWeapon(["AK-12", "6P41", "BALLISTIC SHIELD"]),
+        secondary: getWeapon(["PMM", "GSH-18"]),
+        speed: 1,
+        health: 3
     },
     {
-        name: "glaz"
+        name: "glaz",
         type: "attacker",
-        specialties: ["INTEL" , "SUPPORT"]
+        specialties: ["INTEL" , "SUPPORT"],
+        gadgets: ["Smoke Grenade", "Frag Grenade", "Claymore"],
+        primary: getWeapon(["OTS-03"]),
+        secondary: getWeapon(["PMM", "GONNE-6", "BEARING 9"]),
+        speed: 1,
+        health: 3
     },
 
     //Defenders
