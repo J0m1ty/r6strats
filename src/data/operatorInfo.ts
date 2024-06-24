@@ -180,12 +180,22 @@ const attackers: OperatorData<OperatorType>[] = [
     {
         name: "nokk",
         type: "attacker",
-        specialties: ["FRONT LINE" , "MAP CONTROL"]
+        specialties: ["FRONT LINE" , "MAP CONTROL"],
+        gadgets: ["Hard Breach Charge", "Frag Grenade", "Impact EMP Grenade"],
+        primary: getWeapon(["5.7 USG", "D-50"]),
+        secondary: getWeapon(["GONNE-6", "SMG-11", "ITA12S"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "gridlock",
         type: "attacker",
-        specialties: ["SUPPORT" , "MAP CONTROL"]
+        specialties: ["SUPPORT" , "MAP CONTROL"],
+        gadgets: ["Smoke Grenade", "Frag Grenade", "Impact EMP Grenade"],
+        primary: getWeapon(["F90", "M249 SAW"]),
+        secondary: getWeapon(["SUPER SHORTY", "SDP 9MM"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "nomad",
