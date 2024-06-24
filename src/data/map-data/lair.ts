@@ -10,7 +10,7 @@ export const mapData: MapData = {
     rooms: [{
         name: "master-office",
         // site: "2f-Master Office-R6 Room",
-        site: "this should cause an error",
+        site: "",
         bomb: "A",
         floor: "second"
     }]

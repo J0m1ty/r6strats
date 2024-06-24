@@ -1,12 +1,12 @@
 import { AttackerGadget, DefenderGadget } from "./gadgetInfo";
 import { map } from "./mapInfo";
-import { WeaponData } from "./weaponInfo";
+import { Weapon, WeaponName, weapons } from "./weaponInfo";
 
 export type OperatorType = "attacker" | "defender";
 
 export type OperatorSpecialty = "INTEL" | "MAP CONTROL" | "ANTI-ENTRY" | "ANTI-GADGET" | "BREACH" | "TRAPPER" | "CROWD CONTROL" | "SUPPORT" | "FRONT LINE";
 
-export type Gadget = "frag-grenade" | "hard-breach-charge" | "smoke-grenade" | "stun-grenade" | "claymore" | "impact-emp" | "breach-charge"
+export type Gadget = "frag-grenade" | "Hard Breach Charge" | "Smoke Grenade" | "stun-grenade" | "Claymore" | "Impact EMP Grenade" | "Breach Charge"
 
 export type OperatorElement = {
     data: OperatorData<OperatorPosition>;
@@ -15,7 +15,7 @@ export type OperatorElement = {
 
 export type OperatorPosition = "attacker" | "defender";
 
-export const operatorNames = ["sledge", "thatcher", "ash", "thermite", "twitch", "montagne", "glaz", "fuze", "blitz", "iq", "Buck", "blackbeard", "capitao", "hibana", "jackal", "ying", "zofia", "dokkaebi", "lion", "finka", "maverick", "nomad", "gridlock", "nokk", "amaru", "kali", "iana", "ace", "zero", "flores", "osa", "sens", "grim", "brava", "ram", "deimos", "smoke", "mute", "castle", "pulse", "doc", "rook", "kapkan", "tachanka", "jager", "bandit", "frost", "valkyrie", "caveira", "echo", "mira", "lesion", "ela", "vigil", "alibi", "maestro", "clash", "kaid", "mozzie", "warden", "goyo", "wamai", "oryx", "melusi", "aruni", "thunderbird", "thorn", "azami", "solis", "fenrir", "tubarao"] as const;
+export const operatorNames = ["striker", "sentry", "sledge", "thatcher", "ash", "thermite", "twitch", "montagne", "glaz", "fuze", "blitz", "iq", "Buck", "blackbeard", "capitao", "hibana", "jackal", "ying", "zofia", "dokkaebi", "lion", "finka", "maverick", "nomad", "gridlock", "nokk", "amaru", "kali", "iana", "ace", "zero", "flores", "osa", "sens", "grim", "brava", "ram", "deimos", "smoke", "mute", "castle", "pulse", "doc", "rook", "kapkan", "tachanka", "jager", "bandit", "frost", "valkyrie", "caveira", "echo", "mira", "lesion", "ela", "vigil", "alibi", "maestro", "clash", "kaid", "mozzie", "warden", "goyo", "wamai", "oryx", "melusi", "aruni", "thunderbird", "thorn", "azami", "solis", "fenrir", "tubarao"] as const;
 export type OperatorName = typeof operatorNames[number];
 
 export const attackerSpecialties = ["INTEL", "MAP CONTROL", "ANTI-GADGET", "BREACH", "SUPPORT", "FRONT LINE"] as const;
@@ -27,94 +27,155 @@ export type OperatorData<T extends OperatorPosition> = {
     name: OperatorName;
     type: T;
     specialties: T extends "attacker" ? AttackerSpecialty[] : T extends "defender" ? DefenderSpecialty[] : never;
-    primary: WeaponData[];
-    secondary: WeaponData[];
+    primary: Weapon[];
+    secondary: Weapon[];
     gadgets: T extends "attacker" ? AttackerGadget[] : T extends "defender" ? DefenderGadget[] : never;
     speed: 1 | 2 | 3;
-    armor: 1 | 2 | 3;
+    health: 1 | 2 | 3;
 };
+
+function getWeapon(weaponNames : WeaponName[]) : Weapon[] {
+    return weapons.filter((weapon : Weapon) => {
+        weaponNames.forEach((weaponName) => {
+            if (weapon.name == weaponName){
+                return weapon
+            }
+        })
+    })
+}
 
 const attackers: OperatorData<OperatorType>[] = [
 
     //Attackers
-
     {
-        badge: "operators/badges/deimos.png",
+        name: "striker",
+        specialties: ["SUPPORT"],
+        gadgets: ["Breach Charge", "Claymore", "Frag Grenade", "Hard Breach Charge", "Smoke Grenade", "Stun Grenade", "Impact EMP Grenade"],
+        type: "attacker",
+        primary: getWeapon(["M4", "M249"]),
+        secondary: getWeapon(["5.7 USG", "ITA12S"]),
+        speed: 2,
+        health: 2
+    },
+    {
         name: "deimos",
         specialties: ["INTEL", "MAP CONTROL"],
-        gadgets: ["Frag Grenade", "Hard Breach Charge"],
+        gadgets: ["Frag Grenade", "Hard Breach Charge", "Smoke Grenade"],
         type: "attacker",
-        primary: [],
-        secondary: [],
-        gadgets: [],
-        speed: 1,
-        armor: 2
+        primary: getWeapon(["AK-74M", "M590A1"]),
+        secondary: getWeapon([".44 VENDETTA"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "ram",
         type: "attacker",
         specialties: ["BREACH"],
-        gadgets: ["Smoke Grenade", "Stun Grenade"]
+        gadgets: ["Smoke Grenade", "Stun Grenade"],
+        primary: getWeapon(["R4-C", "LMG-E"]),
+        secondary: getWeapon(["ITA12S", "MK1 9MM"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "brava",
         type: "attacker",
         specialties: ["INTEL", "ANTI-GADGET"],
-        gadgets: ["Smoke Grenade", "Claymore"]
+        gadgets: ["Smoke Grenade", "Claymore"],
+        primary: getWeapon(["PARA-308", "CAMRS"]),
+        secondary: getWeapon(["USP40", "SUPER SHORTY"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "grim",
         type: "attacker",
         specialties: ["FRONT LINE", "MAP CONTROL"],
-        gadgets: ["Impact EMP Grenade", "Claymore", "Hard Breach Charge"]
+        gadgets: ["Impact EMP Grenade", "Claymore", "Hard Breach Charge", "Breach Charge"],
+        primary: getWeapon(["552 COMMANDO", "SG-CQB"]),
+        secondary: getWeapon(["P229", "BAILIFF 410"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "sens",
         type: "attacker",
         specialties: ["SUPPORT", "MAP CONTROL"],
-        gadgets: ["hard-breach-charge", "claymore", "frag-grenade"]
+        gadgets: ["Hard Breach Charge", "Claymore"],
+        primary: getWeapon(["POF9", "417"]),
+        secondary: getWeapon(["SDP 9MM", "GONNE-6"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "osa",
         type: "attacker",
         specialties: ["INTEL", "SUPPORT"],
-        gadgets: ["frag-grenade", "claymore", "impact-emp"]
+        gadgets: ["Frag Grenade", "Claymore", "Impact EMP Grenade"],
+        primary: getWeapon(["556XI", "PDW9"]),
+        secondary: getWeapon(["PMM"]),
+        speed: 1,
+        health: 3
     },
     {
         name: "flores",
         type: "attacker",
         specialties: ["ANTI-GADGET","INTEL"],
-        gadgets: ["claymore", "stun-grenade"]
+        gadgets: ["Claymore", "Stun Grenade"],
+        primary: getWeapon(["AR33", "SR-25"]),
+        secondary: getWeapon(["GSH-18"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "zero",
         type: "attacker",
         specialties: ["ANTI-GADGET","INTEL"],
-        gadgets: ["claymore", "hard-breach-charge"]
+        gadgets: ["Claymore", "Hard Breach Charge"],
+        primary: getWeapon(["SC3000K", "MP7"]),
+        secondary: getWeapon(["5.7 USG", "GONNE-6"]),
+        speed: 3,
+        health: 1
     },
     {
         name: "ace",
         type: "attacker",
         specialties: ["BREACH","ANTI-GADGET"],
-        gadgets: ["breach-charge", "claymore"]
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["AK-12", "M1014"]),
+        secondary: getWeapon(["P9"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "iana",
         type: "attacker",
         specialties: ["FRONT LINE" , "INTEL"],
-        gadgets: ["impact-emp", "smoke-grenade"]
+        gadgets: ["Impact EMP Grenade", "Smoke Grenade"],
+        primary: getWeapon(["ARX200", "G36C"]),
+        secondary: getWeapon(["MK1 9MM", "GONNE-6"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "kali",
         type: "attacker",
         specialties: ["ANTI-GADGET" , "SUPPORT"],
-        gadgets: ["breach-charge", "claymore"]
+        gadgets: ["Breach Charge", "Claymore"],
+        primary: getWeapon(["CSRX 300"]),
+        secondary: getWeapon(["SPSMG9", "C75 AUTO", "P226 MK 25"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "amaru",
         type: "attacker",
         specialties: ["FRONT LINE" , "MAP CONTROL"],
-        gadgets: []
+        gadgets: ["Stun Grenade", "Hard Breach Charge"],
+        primary: getWeapon(["G8A1", "SUPERNOVA"]),
+        secondary: getWeapon(["GONNE-6", "SMG-11", "ITA12S"]),
+        speed: 2,
+        health: 2
     },
     {
         name: "nokk",
