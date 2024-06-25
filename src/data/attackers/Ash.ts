@@ -6,7 +6,7 @@ import { M45_MEUSOC } from "../weapons/M45 MEUSOC";
 import { R4_C } from "../weapons/R4-C";
 
 export const Ash: Attacker = new (class implements Attacker {
-    specialties: Specialty[] = [ "breach", "front line" ];
+    specialties: Specialty[] = [ "breach", "front-line" ];
     health: Value = 1;
     speed: Value = 3;
     primary = [ G36C, R4_C ];

@@ -16,7 +16,7 @@ export abstract class Gun extends Weapon {
     abstract capacity: number;
     abstract reloadSpeed: number;
     
-    abstract adsTime: number;
+    abstract adsTime: number; // this value includes acog + laser if applicable
     
     static get data(): Gun {
         throw new Error("Method not implemented.");
