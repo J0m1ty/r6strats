@@ -5,8 +5,8 @@ import { Five56XI } from "../weapons/556XI";
 import { M1014 } from "../weapons/M1014";
 import { M45_MEUSOC } from "../weapons/M45 MEUSOC";
 
-export const Striker: Attacker = new (class implements Attacker {
-    specialties: Specialty[] = [ "support" ];
+export const Thermite: Attacker = new (class implements Attacker {
+    specialties: Specialty[] = [ "breach", "support" ];
     health: Value = 2;
     speed: Value = 2;
     primary = [ M1014, Five56XI ];

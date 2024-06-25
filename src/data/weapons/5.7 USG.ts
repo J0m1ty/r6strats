@@ -1,9 +1,9 @@
-import { Gun, GunCatagory, GunDestruction, GunFireRate, GunType } from "../Gun";
-import { Mobility } from "../Weapon";
+import { Gun, GunDestruction, GunFireRate, GunType } from "../Gun";
+import { Mobility, WeaponCatagory } from "../Weapon";
 
 export const Five_Seven_USG: Gun = new (class implements Gun {
-    type: GunType = "primary";
-    catagory: GunCatagory = "handgun";
+    type: GunType = "secondary";
+    catagory: WeaponCatagory = "handgun";
     acog = false;
 
     damage = 42;

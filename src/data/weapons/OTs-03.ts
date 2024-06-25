@@ -1,19 +1,19 @@
 import { Gun, GunDestruction, GunFireRate, GunType } from "../Gun";
 import { Mobility, WeaponCatagory } from "../Weapon";
 
-export const Four17: Gun = new (class implements Gun {
+export const OTs_O3: Gun = new (class implements Gun {
     type: GunType = "primary";
-    catagory: WeaponCatagory = "marksman rifle";
-    acog = true;
+    catagory: WeaponCatagory = "sniper rifle";
+    acog = false;
 
-    damage = 69;
+    damage = 71;
     fireRate: GunFireRate = "single shot";
     destruction: GunDestruction = "high";
 
-    magazine = 20;
-    capacity = 161;
-    reloadSpeed = 3.3;
+    magazine = 16;
+    capacity = 106;
+    reloadSpeed = 3.4;
     
-    adsTime = 0.52;
+    adsTime = 0.49;
     mobility: Mobility = "0%";
 })();

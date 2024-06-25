@@ -1,13 +1,11 @@
 import { Weapon } from "./Weapon";
 
 export type GunType = "primary" | "secondary";
-export type GunCatagory = "shield" | "hand cannon" | "assault rifle" | "submachine gun" | "shotgun" | "marksman rifle" | "light machine gun" | "handgun" | "machine pistol";
 export type GunFireRate = number | "single shot";
 export type GunDestruction = "low" | "medium" | "high" | "full";
 
 export abstract class Gun extends Weapon {
     abstract type: GunType;
-    abstract catagory: GunCatagory;
     abstract acog: boolean;
 
     abstract damage: number;

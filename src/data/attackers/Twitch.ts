@@ -6,8 +6,8 @@ import { LFP586 } from "../weapons/LFP586";
 import { P9 } from "../weapons/P9";
 import { SG_CQB } from "../weapons/SG-CQB";
 
-export const Sledge: Attacker = new (class implements Attacker {
-    specialties: Specialty[] = [ "breach", "anti-gadget" ];
+export const Twitch: Attacker = new (class implements Attacker {
+    specialties: Specialty[] = [ "anti-gadget", "intel" ];
     health: Value = 2;
     speed: Value = 2;
     primary = [ F2, Four17, SG_CQB ];

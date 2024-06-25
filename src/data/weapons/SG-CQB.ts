@@ -1,9 +1,9 @@
-import { Gun, GunCatagory, GunDestruction, GunFireRate, GunType } from "../Gun";
-import { Mobility } from "../Weapon";
+import { Gun, GunDestruction, GunFireRate, GunType } from "../Gun";
+import { Mobility, WeaponCatagory } from "../Weapon";
 
 export const SG_CQB: Gun = new (class implements Gun {
     type: GunType = "primary";
-    catagory: GunCatagory = "shotgun";
+    catagory: WeaponCatagory = "shotgun";
     acog = true;
 
     damage = 44;

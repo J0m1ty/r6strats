@@ -1,9 +1,9 @@
-import { Gun, GunCatagory, GunDestruction, GunType } from "../Gun";
-import { Mobility } from "../Weapon";
+import { Gun, GunDestruction, GunType } from "../Gun";
+import { Mobility, WeaponCatagory } from "../Weapon";
 
 export const M249: Gun = new (class implements Gun {
     type: GunType = "primary";
-    catagory: GunCatagory = "light machine gun";
+    catagory: WeaponCatagory = "light machine gun";
     acog = true;
 
     damage = 48;
