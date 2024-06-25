@@ -39,6 +39,20 @@ export const Consulate = new (class implements Map {
             "Security",
             "Construction",
             "Lockers",
+        ],
+        "EXT": [
+            "Front Alley",
+            "East Front Yard",
+            "West Front Yard",
+            "Fountain",
+            "Parking",
+            "Garage Wat",
+            "Memorial",
+            "Side Entrance",
+            "Courtyard",
+            "Back Courtyard",
+            "Police",
+            "Barricade"
         ]
     };
     get sites() {
