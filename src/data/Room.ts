@@ -1,11 +1,13 @@
-import { Bombsite } from "./Bombsite";
 
-export type Floor = "B" | "1f" | "2f" | "3f";
-export type SiteLetter = "A" | "B";
+export type Letter = "A" | "B";
+export type Site = {
+    id: number;
+    name: string;
+    hostage?: true;
+    secure?: true;
+} & ({ bomb: true; letter: Letter; } | {});
 
-export type Room = { name: string; floor: Floor; } & ({
-    bombsite: undefined;
-} | {
-    bombsite: Bombsite;
-    siteLetter: SiteLetter;
-});
+export type Room = {
+    name: string;
+    site?: Site;
+};

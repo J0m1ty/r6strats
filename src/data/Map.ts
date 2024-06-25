@@ -1,9 +1,12 @@
 import { Room } from "./Room";
 
 export type MapPool = "STANDARD" | "QUICK MATCH" | "RANKED" | "TEAM DEATHMATCH";
+export type Floor = "B" | "1F" | "2F" | "3F";
+export type Rooms = Partial<Record<Floor, (string | Room)[]>>;
 
 export abstract class Map {
     abstract pools: MapPool[];
     abstract spawns: string[];
-    abstract rooms: Room[];
+    abstract rooms: Rooms;
+    abstract sites: Room[];
 }

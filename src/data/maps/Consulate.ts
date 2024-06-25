@@ -1,63 +1,47 @@
-import { Bombsite } from "../Bombsite";
-import { Map, MapPool } from "../Map";
+import { Map, MapPool, Rooms } from "../Map";
 import { Room } from "../Room";
-
-export const Bombsite1: Bombsite = new (class implements Bombsite {
-    name: string = "2F Meeting & Office"
-    id: number = 1;
-})();
 
 export const Consulate = new (class implements Map {
     pools: MapPool[] = ["STANDARD", "QUICK MATCH", "RANKED"];
-    spawns: string[] = ["Riot Barricade", "Police Line", "Gas Station", "Side Street"];
-    rooms: Room[] = [
-        {
-            name: "Meeting Room",
-            floor: "2f",
-            bombsite: Bombsite1,
-            siteLetter: "A"
-        },
-        {
-            name: "Consul Office",
-            floor: "2f",
-            bombsite: Bombsite1,
-            siteLetter: "B"
-        },
-        {
-            name: "Piano",
-            floor: "1f",
-            bombsite: true,
-            siteLetter: "A"
-        },
-        {
-            name: "Exbo",
-            floor: "1f",
-            bombsite: true,
-            siteLetter: "B"
-        },
-        {
-            name: "Tellers",
-            floor: "1f",
-            bombsite: true,
-            siteLetter: "A"
-        },
-        {
-            name: "Servers",
-            floor: "1f",
-            bombsite: true,
-            siteLetter: "B"
-        },
-        {
-            name: "Garage",
-            floor: "B",
-            bombsite: true,
-            siteLetter: "A"
-        },
-        {
-            name: "Cafeteria",
-            floor: "B",
-            bombsite: true,
-            siteLetter: "B"
-        }
-    ]
+    spawns = ["Riot Barricade", "Police Line", "Gas Station", "Side Street"];
+    rooms: Rooms = {
+        "2F": [
+            { name: "Meeting Room", site: { id: 1, name: "2F Consul Office & Meeting Room", bomb: true, letter: "A" } },
+            { name: "Consul Office", site: { id: 1, name: "2F Consul Office & Meeting Room", bomb: true, letter: "B" } },
+            "Side",
+            "Catering",
+            "Bathroom",
+            "Reception",
+            "Copy Room",
+            "Manager's Office",
+            "Administration Office",
+            "Secretary"
+        ],
+        "1F": [
+            { name: "Piano", site: { id: 2, name: "1F Piano & Exobition", bomb: true, letter: "A" } },
+            { name: "Exbosition", site: { id: 2, name: "1F Piano & Exobition", bomb: true, letter: "B" } },
+            { name: "Tellers", site: { id: 3, name: "1F Tellers & B Servers", bomb: true, letter: "A" } },
+            "Closet",
+            "Lobby",
+            "Main Entrance",
+            "Lounge",
+            "Visa Office",
+            "Emergency Exit",
+            "Main"
+        ],
+        "B": [
+            { name: "Servers", site: { id: 3, name: "1F Tellers & B Servers", bomb: true, letter: "B" } },
+            { name: "Cafeteria", site: { id: 4, name: "B Cafeteria & Garage", bomb: true, letter: "A" } },
+            { name: "Garage", site: { id: 4, name: "B Cafeteria & Garage", bomb: true, letter: "B" } },
+            "Electrical",
+            "Storage",
+            "Coffee",
+            "Security",
+            "Construction",
+            "Lockers",
+        ]
+    };
+    get sites() {
+        return Object.values(this.rooms).flat().filter((room => typeof room !== "string" && room.site)) as Room[];
+    }
 });
