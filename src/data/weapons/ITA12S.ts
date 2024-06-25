@@ -1,9 +1,9 @@
-import { Gun, GunCatagory, GunDestruction, GunFireRate, GunType } from "../Gun";
-import { Mobility } from "../Weapon";
+import { Gun, GunDestruction, GunFireRate, GunType } from "../Gun";
+import { Mobility, WeaponCatagory } from "../Weapon";
 
 export const ITA12S: Gun = new (class implements Gun {
-    type: GunType = "primary";
-    catagory: GunCatagory = "shotgun";
+    type: GunType = "secondary";
+    catagory: WeaponCatagory = "shotgun";
     acog = false;
 
     damage = 29;
