@@ -1,5 +1,11 @@
+import { Bombsite } from "../Bombsite";
 import { Map, MapPool } from "../Map";
 import { Room } from "../Room";
+
+export const Bombsite1: Bombsite = new (class implements Bombsite {
+    name: string = "2F Meeting & Office"
+    id: number = 1;
+})();
 
 export const Consulate = new (class implements Map {
     pools: MapPool[] = ["STANDARD", "QUICK MATCH", "RANKED"];
@@ -8,58 +14,50 @@ export const Consulate = new (class implements Map {
         {
             name: "Meeting Room",
             floor: "2f",
-            bombsite: true,
-            id: 1,
-            site: "A"
+            bombsite: Bombsite1,
+            siteLetter: "A"
         },
         {
             name: "Consul Office",
             floor: "2f",
-            bombsite: true,
-            id: 1,
-            site: "B"
+            bombsite: Bombsite1,
+            siteLetter: "B"
         },
         {
             name: "Piano",
             floor: "1f",
             bombsite: true,
-            id: 2,
-            site: "A"
+            siteLetter: "A"
         },
         {
             name: "Exbo",
             floor: "1f",
             bombsite: true,
-            id: 2,
-            site: "B"
+            siteLetter: "B"
         },
         {
             name: "Tellers",
             floor: "1f",
             bombsite: true,
-            id: 3,
-            site: "A"
+            siteLetter: "A"
         },
         {
             name: "Servers",
             floor: "1f",
             bombsite: true,
-            id: 3,
-            site: "B"
+            siteLetter: "B"
         },
         {
             name: "Garage",
             floor: "B",
             bombsite: true,
-            id: 4,
-            site: "A"
+            siteLetter: "A"
         },
         {
             name: "Cafeteria",
             floor: "B",
             bombsite: true,
-            id: 4,
-            site: "B"
+            siteLetter: "B"
         }
     ]
 });
