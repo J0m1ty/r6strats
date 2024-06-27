@@ -5,7 +5,7 @@ import { M249 } from "../weapons/light machine gun/M249";
 import { C75_AUTO } from "../weapons/machine pistol/C75 AUTO";
 import { SUPER_SHORTY } from "../weapons/shotgun/SUPER SHORTY";
 
-export const Ash: Defender = new (class implements Defender {
+export const Sentry: Defender = new (class implements Defender {
     specialties: Specialty[] = [ "support", ];
     health: Value = 2;
     speed: Value = 2;
