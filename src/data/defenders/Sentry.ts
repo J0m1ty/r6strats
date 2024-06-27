@@ -1,8 +1,4 @@
 import { Specialty, Value } from "../Operator";
-import { Five_Seven_USG } from "../weapons/handgun/5.7 USG";
-import { G36C } from "../weapons/assault rifle/G36C";
-import { M45_MEUSOC } from "../weapons/handgun/M45 MEUSOC";
-import { R4_C } from "../weapons/assault rifle/R4-C";
 import { Defender, DefenderGadget } from "../Defender";
 import { M4 } from "../weapons/assault rifle/M4";
 import { M249 } from "../weapons/light machine gun/M249";
