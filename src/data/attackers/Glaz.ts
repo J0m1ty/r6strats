@@ -1,9 +1,9 @@
 import { Attacker, AttackerGadget } from "../Attacker";
 import { Specialty, Value } from "../Operator";
-import { BEARING_9 } from "../weapons/BEARING 9";
-import { GONNE_6 } from "../weapons/GONNE-6";
-import { OTs_O3 } from "../weapons/OTs-03";
-import { PMM } from "../weapons/PMM";
+import { BEARING_9 } from "../weapons/machine pistol/BEARING 9";
+import { GONNE_6 } from "../weapons/hand cannon/GONNE-6";
+import { OTs_O3 } from "../weapons/sniper rifle/OTs-03";
+import { PMM } from "../weapons/handgun/PMM";
 
 export const Glaz: Attacker = new (class implements Attacker {
     specialties: Specialty[] = [ "support", "intel" ];

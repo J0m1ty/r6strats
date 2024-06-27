@@ -1,7 +1,7 @@
 import { Attacker, AttackerGadget } from "../Attacker";
 import { Specialty, Value } from "../Operator";
-import { Balistic_Shield } from "../weapons/Balistic Shield";
-import { PMM } from "../weapons/PMM";
+import { Balistic_Shield } from "../weapons/shield/Balistic Shield";
+import { PMM } from "../weapons/handgun/PMM";
 
 export const Fuze: Attacker = new (class implements Attacker {
     specialties: Specialty[] = [ "anti-gadget" ];

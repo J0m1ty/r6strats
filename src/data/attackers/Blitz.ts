@@ -1,7 +1,7 @@
 import { Attacker, AttackerGadget } from "../Attacker";
 import { Specialty, Value } from "../Operator";
-import { G52_Tactical_Shield } from "../weapons/G52-Tactical Shield";
-import { P12 } from "../weapons/P12";
+import { G52_Tactical_Shield } from "../weapons/shield/G52-Tactical Shield";
+import { P12 } from "../weapons/handgun/P12";
 
 export const Glaz: Attacker = new (class implements Attacker {
     specialties: Specialty[] = [ "front-line", "map control" ];

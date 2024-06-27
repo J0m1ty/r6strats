@@ -1,8 +1,8 @@
 import { Attacker, AttackerGadget } from "../Attacker";
 import { Specialty, Value } from "../Operator";
-import { Le_Roc_Shield } from "../weapons/LE ROC SHIELD";
-import { LFP586 } from "../weapons/LFP586";
-import { P9 } from "../weapons/P9";
+import { Le_Roc_Shield } from "../weapons/shield/Le Roc Shield";
+import { LFP586 } from "../weapons/handgun/LFP586";
+import { P9 } from "../weapons/handgun/P9";
 
 export const Montagne: Attacker = new (class implements Attacker {
     specialties: Specialty[] = [ "support", "intel" ];

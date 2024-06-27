@@ -1,10 +1,10 @@
 import { Attacker, AttackerGadget } from "../Attacker";
 import { Specialty, Value } from "../Operator";
-import { Four17 } from "../weapons/417";
-import { F2 } from "../weapons/F2";
-import { LFP586 } from "../weapons/LFP586";
-import { P9 } from "../weapons/P9";
-import { SG_CQB } from "../weapons/SG-CQB";
+import { Four17 } from "../weapons/marksman rifle/417";
+import { F2 } from "../weapons/assault rifle/F2";
+import { LFP586 } from "../weapons/handgun/LFP586";
+import { P9 } from "../weapons/handgun/P9";
+import { SG_CQB } from "../weapons/shotgun/SG-CQB";
 
 export const Twitch: Attacker = new (class implements Attacker {
     specialties: Specialty[] = [ "anti-gadget", "intel" ];
