@@ -1,22 +1,22 @@
 import { Gun, GunDestruction, GunType } from "../../Gun";
 import { Mobility, WeaponCatagory } from "../../Weapon";
 
-export const L85A2: Gun = new (class implements Gun {
+export const Commando_9: Gun = new (class implements Gun {
     type: GunType = "primary";
     catagory: WeaponCatagory = "assault rifle";
     acog = true;
 
-    damage = 47;
-    fireRate = 670;
+    damage = 36;
+    fireRate = 780;
     destruction: GunDestruction = "low";
 
-    magazine = 31;
-    capacity = 181;
-    reloadSpeed = 3.3;
+    magazine = 26;
+    capacity = 176;
+    reloadSpeed = 2.5;
     
-    controlDifficulty = 2;
-    adsTime = 0.47;
-    hipAccuracy = 70;
+    controlDifficulty = 1;
+    adsTime = 0.49;
+    hipAccuracy = 65;
 
     mobility: Mobility = "0%";
 })();

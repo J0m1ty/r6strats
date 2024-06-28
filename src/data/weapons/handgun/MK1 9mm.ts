@@ -14,6 +14,9 @@ export const MK1_9mm: Gun = new (class implements Gun {
     capacity = 105;
     reloadSpeed = 1.9;
     
+    controlDifficulty = 2;
     adsTime = 0.22;
+    hipAccuracy = 75;
+
     mobility: Mobility = "10%";
 })();

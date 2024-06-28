@@ -14,6 +14,9 @@ export const M590A1: Gun = new (class implements Gun {
     capacity = 50;
     reloadSpeed = 1.6;
     
+    controlDifficulty = 1;
     adsTime = 0.32;
+    hipAccuracy = 60;
+
     mobility: Mobility = "5%";
 })();

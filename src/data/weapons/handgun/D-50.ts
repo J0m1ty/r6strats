@@ -14,6 +14,9 @@ export const D_50: Gun = new (class implements Gun {
     capacity = 64;
     reloadSpeed = 2.5;
     
+    controlDifficulty = 3;
     adsTime = 0.22;
+    hipAccuracy = 75;
+
     mobility: Mobility = "10%";
 })();

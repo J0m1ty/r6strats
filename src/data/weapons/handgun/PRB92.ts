@@ -14,6 +14,9 @@ export const PRB92: Gun = new (class implements Gun {
     capacity = 106;
     reloadSpeed = 2.6;
     
+    controlDifficulty = 2;
     adsTime = 0.22;
+    hipAccuracy = 75;
+
     mobility: Mobility = "10%";
 })();

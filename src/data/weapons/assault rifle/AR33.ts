@@ -14,6 +14,9 @@ export const AR33: Gun = new (class implements Gun {
     capacity = 176;
     reloadSpeed = 3.3;
     
+    controlDifficulty = 2;
     adsTime = 0.47;
+    hipAccuracy = 70;
+
     mobility: Mobility = "0%";
 })();

@@ -14,6 +14,9 @@ export const C8_SFW: Gun = new (class implements Gun {
     capacity = 181;
     reloadSpeed = 2.9;
     
+    controlDifficulty = 4;
     adsTime = 0.47;
+    hipAccuracy = 70;
+
     mobility: Mobility = "5%";
 })();

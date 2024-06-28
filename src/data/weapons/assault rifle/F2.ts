@@ -14,6 +14,9 @@ export const F2: Gun = new (class implements Gun {
     capacity = 176;
     reloadSpeed = 3.1;
     
+    controlDifficulty = 4;
     adsTime = 0.47;
+    hipAccuracy = 70;
+
     mobility: Mobility = "5%";
 })();

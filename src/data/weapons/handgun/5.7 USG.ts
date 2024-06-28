@@ -14,6 +14,9 @@ export const Five_Seven_USG: Gun = new (class implements Gun {
     capacity = 121;
     reloadSpeed = 2.4;
     
+    controlDifficulty = 2;
     adsTime = 0.22;
+    hipAccuracy = 75;
+
     mobility: Mobility = "10%";
 })();

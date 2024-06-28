@@ -14,6 +14,9 @@ export const LFP586: Gun = new (class implements Gun {
     capacity = 61;
     reloadSpeed = 4;
     
+    controlDifficulty = 3;
     adsTime = 0.22;
+    hipAccuracy = 50;
+
     mobility: Mobility = "10%";
 })();

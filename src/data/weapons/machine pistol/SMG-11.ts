@@ -14,6 +14,9 @@ export const SMG_11: Gun = new (class implements Gun {
     capacity = 113;
     reloadSpeed = 2.7;
     
+    controlDifficulty = 5;
     adsTime = 0.32;
+    hipAccuracy = 76;
+
     mobility: Mobility = "0%";
 })();

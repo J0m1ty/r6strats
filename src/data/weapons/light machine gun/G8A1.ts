@@ -14,6 +14,9 @@ export const G8A1: Gun = new (class implements Gun {
     capacity = 251;
     reloadSpeed = 3.9;
     
+    controlDifficulty = 2;
     adsTime = 0.56;
+    hipAccuracy = 60;
+
     mobility: Mobility = "-10%";
 })();

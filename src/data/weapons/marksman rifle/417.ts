@@ -14,6 +14,9 @@ export const Four17: Gun = new (class implements Gun {
     capacity = 161;
     reloadSpeed = 3.3;
     
+    controlDifficulty = 2;
     adsTime = 0.52;
+    hipAccuracy = 50;
+
     mobility: Mobility = "0%";
 })();

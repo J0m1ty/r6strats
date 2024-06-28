@@ -14,6 +14,9 @@ export const Supernova: Gun = new (class implements Gun {
     capacity = 57;
     reloadSpeed = 1.6;
     
+    controlDifficulty = 1;
     adsTime = 0.29;
+    hipAccuracy = 30;
+
     mobility: Mobility = "5%";
 })();

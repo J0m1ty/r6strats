@@ -14,6 +14,9 @@ export const P12: Gun = new (class implements Gun {
     capacity = 106;
     reloadSpeed = 2.4;
     
+    controlDifficulty = 2;
     adsTime = 0.19;
+    hipAccuracy = 75;
+    
     mobility: Mobility = "10%";
 })();

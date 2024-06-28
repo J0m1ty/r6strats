@@ -14,6 +14,9 @@ export const P226_MK_25: Gun = new (class implements Gun {
     capacity = 97;
     reloadSpeed = 2.1;
     
+    controlDifficulty = 2;
     adsTime = 0.22;
+    hipAccuracy = 75;
+    
     mobility: Mobility = "10%";
 })();

@@ -14,6 +14,9 @@ export const M4: Gun = new (class implements Gun {
     capacity = 181;
     reloadSpeed = 3.6;
     
+    controlDifficulty = 2;
     adsTime = 0.52;
+    hipAccuracy = 70;
+    
     mobility: Mobility = "0%";
 })();

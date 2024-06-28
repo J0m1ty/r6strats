@@ -1,7 +1,7 @@
 import { Gun, GunDestruction, GunFireRate, GunType } from "../../Gun";
 import { Mobility, WeaponCatagory } from "../../Weapon";
 
-export const C75_AUTO: Gun = new (class implements Gun {
+export const C75_Auto: Gun = new (class implements Gun {
     type: GunType = "secondary";
     catagory: WeaponCatagory = "machine pistol";
     acog = false;
@@ -14,6 +14,9 @@ export const C75_AUTO: Gun = new (class implements Gun {
     capacity = 131;
     reloadSpeed = 2.9;
     
+    controlDifficulty = 3;
     adsTime = 0.31;
+    hipAccuracy = 71;
+
     mobility: Mobility = "5%";
 })();

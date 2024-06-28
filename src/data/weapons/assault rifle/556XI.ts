@@ -14,6 +14,9 @@ export const Five56XI: Gun = new (class implements Gun {
     capacity = 181;
     reloadSpeed = 3.7;
     
-    adsTime = 0.47;
+    controlDifficulty = 1;
+    adsTime = 0.52;
+    hipAccuracy = 70;
+
     mobility: Mobility = "0%";
 })();

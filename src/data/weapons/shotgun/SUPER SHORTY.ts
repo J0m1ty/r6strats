@@ -1,7 +1,7 @@
 import { Gun, GunDestruction, GunFireRate, GunType } from "../../Gun";
 import { Mobility, WeaponCatagory } from "../../Weapon";
 
-export const SUPER_SHORTY: Gun = new (class implements Gun {
+export const Super_Shorty: Gun = new (class implements Gun {
     type: GunType = "secondary";
     catagory: WeaponCatagory = "shotgun";
     acog = false;
@@ -14,6 +14,9 @@ export const SUPER_SHORTY: Gun = new (class implements Gun {
     capacity = 46;
     reloadSpeed = 1.55;
     
+    controlDifficulty = 1;
     adsTime = 0.29;
+    hipAccuracy = 40;
+
     mobility: Mobility = "5%";
 })();

@@ -14,6 +14,9 @@ export const CAMRS: Gun = new (class implements Gun {
     capacity = 141;
     reloadSpeed = 3.4;
     
+    controlDifficulty = 2;
     adsTime = 0.47;
+    hipAccuracy = 50;
+
     mobility: Mobility = "5%";
 })();

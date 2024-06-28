@@ -14,6 +14,9 @@ export const SG_CQB: Gun = new (class implements Gun {
     capacity = 50;
     reloadSpeed = 1.6;
     
+    controlDifficulty = 1;
     adsTime = 0.29;
+    hipAccuracy = 40;
+
     mobility: Mobility = "0%";
 })();

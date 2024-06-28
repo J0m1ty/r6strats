@@ -14,6 +14,9 @@ export const OTs_O3: Gun = new (class implements Gun {
     capacity = 106;
     reloadSpeed = 3.4;
     
+    controlDifficulty = 2;
     adsTime = 0.49;
+    hipAccuracy = 50;
+
     mobility: Mobility = "0%";
 })();

@@ -1,5 +1,5 @@
-import { Gun, GunDestruction, GunType } from "../Gun";
-import { Mobility, WeaponCatagory } from "../Weapon";
+import { Gun, GunDestruction, GunType } from "../../Gun";
+import { Mobility, WeaponCatagory } from "../../Weapon";
 
 export const AK_12: Gun = new (class implements Gun {
     type: GunType = "primary";
@@ -14,6 +14,9 @@ export const AK_12: Gun = new (class implements Gun {
     capacity = 181;
     reloadSpeed = 3.3;
     
+    controlDifficulty = 3;
     adsTime = 0.47;
+    hipAccuracy = 60;
+
     mobility: Mobility = "0%";
 })();

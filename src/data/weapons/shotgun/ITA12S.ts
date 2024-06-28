@@ -14,6 +14,9 @@ export const ITA12S: Gun = new (class implements Gun {
     capacity = 36;
     reloadSpeed = 2.1;
     
+    controlDifficulty = 1;
     adsTime = 0.29;
+    hipAccuracy = 40;
+
     mobility: Mobility = "5%";
 })();

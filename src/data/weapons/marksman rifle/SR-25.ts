@@ -14,6 +14,9 @@ export const SR_25: Gun = new (class implements Gun {
     capacity = 141;
     reloadSpeed = 3.5;
     
+    controlDifficulty = 3;
     adsTime = 0.52;
+    hipAccuracy = 50;
+
     mobility: Mobility = "0%";
 })();

@@ -11,7 +11,7 @@ export abstract class Gun extends Weapon {
     abstract type: GunType;
     abstract acog: boolean;
 
-    abstract damage: number; //Body damage at 0 meters
+    abstract damage: number; // body damage at 0 meters
     abstract fireRate: GunFireRate;
     abstract destruction: GunDestruction;
 
@@ -19,13 +19,7 @@ export abstract class Gun extends Weapon {
     abstract capacity: number;
     abstract reloadSpeed: number;
     
+    abstract controlDifficulty: number; // 1-3
     abstract adsTime: number; // this value includes acog + laser if applicable
-
-    //abstract adsNonMagnifyingTime: number;
-    //abstract adsLaserTime: number;
-    //abstract adsAcogTime: number;
-    
-    static get data(): Gun {
-        throw new Error("Method not implemented.");
-    }
+    abstract hipAccuracy: number; // 0-100 (%)
 }

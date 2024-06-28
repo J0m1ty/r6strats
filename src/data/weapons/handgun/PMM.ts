@@ -14,6 +14,9 @@ export const PMM: Gun = new (class implements Gun {
     capacity = 81;
     reloadSpeed = 1.9;
     
+    controlDifficulty = 2;
     adsTime = 0.22;
+    hipAccuracy = 75;
+
     mobility: Mobility = "10%";
 })();
