@@ -1,7 +1,7 @@
 import { Striker } from "./attackers/Striker";
 import { Consulate } from "./maps/Consulate";
 import { Five_Seven_USG } from "./weapons/handgun/5.7 USG";
-import { Balistic_Shield } from "./weapons/shield/Balistic Shield";
+import { Balistic_Shield } from "./weapons/shield/BALISTIC SHIELD";
 import { ITA12S } from "./weapons/shotgun/ITA12S";
 import { L85A2 } from "./weapons/assault rifle/L85A2";
 import { M249 } from "./weapons/light machine gun/M249";
