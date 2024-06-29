@@ -6,7 +6,7 @@ import { P9 } from "../weapons/handgun/P9";
 import { LFP586 } from "../weapons/handgun/LFP586";
 import { BAILIFF_410 } from "../weapons/revolver/BAILIFF 410";
 
-export const Pulse: Defender = new (class implements Defender {
+export const Doc: Defender = new (class implements Defender {
     specialties: Specialty[] = [ "support" ];
     health: Value = 3;
     speed: Value = 1;
