@@ -7,7 +7,7 @@ import { SUPER_SHORTY } from "../weapons/shotgun/SUPER SHORTY";
 import { M45_MEUSOC } from "../weapons/handgun/M45 MEUSOC";
 
 export const Castle: Defender = new (class implements Defender {
-    specialties: Specialty[] = [ "anti-gadget", "crowd control" ];
+    specialties: Specialty[] = [ "anti-entry", "support" ];
     health: Value = 2;
     speed: Value = 2;
     primary = [ UMP45, M1014 ];
