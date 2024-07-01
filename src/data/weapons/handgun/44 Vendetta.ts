@@ -1,22 +1,22 @@
 import { Gun, GunDestruction, GunFireRate, GunType } from "../../Gun";
 import { Mobility, WeaponCatagory } from "../../Weapon";
 
-export const Bailiff_410: Gun = new (class implements Gun {
+export const Fourty4_Vendetta: Gun = new (class implements Gun {
     type: GunType = "secondary";
-    catagory: WeaponCatagory = "revolver";
+    catagory: WeaponCatagory = "handgun";
     acog = false;
 
-    damage = 30;
+    damage = 78;
     fireRate: GunFireRate = "single shot";
     destruction: GunDestruction = "full";
 
-    magazine = 5;
-    capacity = 46;
-    reloadSpeed = 4.8;
+    magazine = 6;
+    capacity = 66;
+    reloadSpeed = 3;
     
-    controlDifficulty = 2;
-    adsTime = 0.21;
-    hipAccuracy = 60;
+    controlDifficulty = 1;
+    adsTime = 0.19;
+    hipAccuracy = 50;
 
     mobility: Mobility = "10%";
 })();
