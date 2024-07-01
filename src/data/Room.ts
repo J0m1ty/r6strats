@@ -1,11 +1,17 @@
-
 export type Letter = "A" | "B";
 export type Site = {
-    id: number;
-    name: string;
-    hostage?: true;
-    secure?: true;
-} & ({ bomb: true; letter: Letter; } | {});
+    bomb?: {
+        id: number;
+        name: string;
+        letter: Letter;
+    },
+    hostage?: {
+        id: number;
+    },
+    secure?: {
+        id: number;
+    }
+};
 
 export type Room = {
     name: string;

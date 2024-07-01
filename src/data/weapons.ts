@@ -180,7 +180,6 @@ export const weapons = {
     P90,
     PDW9,
     UMP45,
-
 };
 
 export type WeaponName = keyof typeof weapons;
