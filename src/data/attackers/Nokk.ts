@@ -5,7 +5,7 @@ import { D_50 } from "../weapons/handgun/D-50";
 import { SIX12_SD } from "../weapons/shotgun/SIX12_SD";
 import { FMG_9 } from "../weapons/submachine gun/FMG-9";
 
-export const Nokk: Attacker = new (class implements Attacker {
+export const Nokk: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "front-line", "map control" ];
     health: Value = 2;
     speed: Value = 2;

@@ -6,7 +6,7 @@ import { LFP586 } from "../weapons/handgun/LFP586";
 import { P9 } from "../weapons/handgun/P9";
 import { SG_CQB } from "../weapons/shotgun/SG-CQB";
 
-export const Twitch: Attacker = new (class implements Attacker {
+export const Twitch: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "anti-gadget", "intel" ];
     health: Value = 2;
     speed: Value = 2;

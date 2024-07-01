@@ -3,6 +3,7 @@ import { Mobility, WeaponCatagory } from "../../Weapon";
 
 export const One911_TACOPS: Gun = new (class implements Gun {
     type: GunType = "secondary";
+    name = "1911 TACOPS";
     catagory: WeaponCatagory = "handgun";
     acog = false;
 

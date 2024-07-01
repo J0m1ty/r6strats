@@ -5,7 +5,7 @@ import { ITA12S } from "../weapons/shotgun/ITA12S";
 import { M249 } from "../weapons/light machine gun/M249";
 import { M4 } from "../weapons/assault rifle/M4";
 
-export const Striker: Attacker = new (class implements Attacker {
+export const Striker: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "support" ];
     health: Value = 2;
     speed: Value = 2;

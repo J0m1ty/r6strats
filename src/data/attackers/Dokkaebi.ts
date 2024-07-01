@@ -6,7 +6,7 @@ import { SMG_12 } from "../weapons/machine pistol/SMG-12";
 import { Mk_14_EBR } from "../weapons/marksman rifle/Mk 14 EBR";
 import { BOSG_12_2 } from "../weapons/shotgun/BOSG.12.2";
 
-export const Dokkaebi: Attacker = new (class implements Attacker {
+export const Dokkaebi: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "intel", "map control" ]; // Changed "breach" to "intel" and "anti-gadget" to "map control
     health: Value = 1;
     speed: Value = 3;

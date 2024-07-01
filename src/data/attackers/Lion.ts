@@ -6,7 +6,7 @@ import { P9 } from "../weapons/handgun/P9";
 import { Four17 } from "../weapons/marksman rifle/417";
 import { SG_CQB } from "../weapons/shotgun/SG-CQB";
 
-export const Lion: Attacker = new (class implements Attacker {
+export const Lion: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "intel", "map control" ];
     health: Value = 2;
     speed: Value = 2;

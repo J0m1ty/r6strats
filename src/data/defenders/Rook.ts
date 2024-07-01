@@ -6,7 +6,7 @@ import { SG_CQB } from "../weapons/shotgun/SG-CQB";
 import { LFP586 } from "../weapons/handgun/LFP586";
 import { P9 } from "../weapons/handgun/P9";
 
-export const Rook: Defender = new (class implements Defender {
+export const Rook: Defender = new (class extends Defender {
     specialties: Specialty[] = [ "support" ];
     health: Value = 3;
     speed: Value = 1;

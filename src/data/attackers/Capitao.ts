@@ -5,7 +5,7 @@ import { M249 } from "../weapons/light machine gun/M249";
 import { PARA_308 } from "../weapons/assault rifle/PARA-308";
 import { PRB92 } from "../weapons/handgun/PRB92";
 
-export const Capitao: Attacker = new (class implements Attacker {
+export const Capitao: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "front-line", "map control" ];
     health: Value = 2;
     speed: Value = 2;

@@ -5,7 +5,7 @@ import { GONNE_6 } from "../weapons/hand cannon/GONNE-6";
 import { Five_Seven_USG } from "../weapons/handgun/5.7 USG";
 import { MP7 } from "../weapons/submachine gun/MP7";
 
-export const Zerp: Attacker = new (class implements Attacker {
+export const Zero: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "anti-gadget", "intel" ];
     health: Value = 1;
     speed: Value = 3;

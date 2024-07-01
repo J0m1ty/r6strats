@@ -2,6 +2,7 @@ export type WeaponCatagory = "revolver" | "shield" | "hand cannon" | "assault ri
 export type Mobility = number | `-${number}%` | `${number}%`;
 
 export abstract class Weapon {
+    abstract name: string;
     abstract catagory: WeaponCatagory;
     abstract mobility: Mobility;
 }

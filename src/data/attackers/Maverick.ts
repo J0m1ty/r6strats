@@ -4,7 +4,7 @@ import { M4 } from "../weapons/assault rifle/M4";
 import { One911_TACOPS } from "../weapons/handgun/1911 TACOPS";
 import { AR_15_50 } from "../weapons/marksman rifle/AR-15.50";
 
-export const Lion: Attacker = new (class implements Attacker {
+export const Maverick: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "intel", "map control" ];
     health: Value = 1;
     speed: Value = 3;

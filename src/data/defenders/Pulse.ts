@@ -5,7 +5,7 @@ import { UMP45 } from "../weapons/submachine gun/UMP45";
 import { M45_MEUSOC } from "../weapons/handgun/M45 MEUSOC";
 import { Five_Seven_USG } from "../weapons/handgun/5.7 USG";
 
-export const Pulse: Defender = new (class implements Defender {
+export const Pulse: Defender = new (class extends Defender {
     specialties: Specialty[] = [ "intel", "support" ];
     health: Value = 1;
     speed: Value = 3;

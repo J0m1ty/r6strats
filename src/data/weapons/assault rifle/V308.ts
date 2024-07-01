@@ -3,6 +3,7 @@ import { Mobility, WeaponCatagory } from "../../Weapon";
 
 export const V308: Gun = new (class implements Gun {
     type: GunType = "primary";
+    name = "V308";
     catagory: WeaponCatagory = "assault rifle";
     acog = true;
 

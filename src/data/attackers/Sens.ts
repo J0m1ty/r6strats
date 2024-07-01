@@ -3,7 +3,7 @@ import { Specialty, Value } from "../Operator";
 import { SDP_9mm } from "../weapons/handgun/SDP 9mm";
 import { Four17 } from "../weapons/marksman rifle/417";
 
-export const Sens: Attacker = new (class implements Attacker {
+export const Sens: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "support", "map control" ];
     health: Value = 1;
     speed: Value = 3;

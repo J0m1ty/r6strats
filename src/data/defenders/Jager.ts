@@ -4,7 +4,7 @@ import { M870 } from "../weapons/shotgun/M870";
 import { Four16_C_Carbine } from "../weapons/assault rifle/416-C Carbine";
 import { P12 } from "../weapons/handgun/P12";
 
-export const Jager: Defender = new (class implements Defender {
+export const Jager: Defender = new (class extends Defender {
     specialties: Specialty[] = [ "anti-gadget", "support" ];
     health: Value = 2;
     speed: Value = 2;

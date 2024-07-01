@@ -1,8 +1,9 @@
 import { Gun, GunDestruction, GunFireRate, GunType } from "../../Gun";
 import { Mobility, WeaponCatagory } from "../../Weapon";
 
-export const P226_MK_25: Gun = new (class implements Gun {
+export const P226_Mk_25: Gun = new (class implements Gun {
     type: GunType = "secondary";
+    name = "P226 Mk 25";
     catagory: WeaponCatagory = "handgun";
     acog = false;
 

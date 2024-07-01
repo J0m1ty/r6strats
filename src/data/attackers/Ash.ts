@@ -5,7 +5,7 @@ import { G36C } from "../weapons/assault rifle/G36C";
 import { M45_MEUSOC } from "../weapons/handgun/M45 MEUSOC";
 import { R4_C } from "../weapons/assault rifle/R4-C";
 
-export const Ash: Attacker = new (class implements Attacker {
+export const Ash: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "breach", "front-line" ];
     health: Value = 1;
     speed: Value = 3;

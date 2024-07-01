@@ -4,7 +4,7 @@ import { AK_12 } from "../weapons/assault rifle/AK-12";
 import { P9 } from "../weapons/handgun/P9";
 import { M1014 } from "../weapons/shotgun/M1014";
 
-export const Ace: Attacker = new (class implements Attacker {
+export const Ace: Attacker = new (class extends Attacker {
     specialties: Specialty[] = [ "breach", "anti-gadget" ];
     health: Value = 2;
     speed: Value = 2;

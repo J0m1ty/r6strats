@@ -4,7 +4,7 @@ import { MP7 } from "../weapons/submachine gun/MP7";
 import { M870 } from "../weapons/shotgun/M870";
 import { P12 } from "../weapons/handgun/P12";
 
-export const Bandit: Defender = new (class implements Defender {
+export const Bandit: Defender = new (class extends Defender {
     specialties: Specialty[] = [ "anti-entry", "anti-gadget" ];
     health: Value = 1;
     speed: Value = 3;
